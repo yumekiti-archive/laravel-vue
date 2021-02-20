@@ -15,7 +15,7 @@ Vue.component('todo-item-2', {
     template: `
       <li>
         {{ title }}
-        <button @click="$emit('remove')">Remove</button>
+        <button class="mt-1 mb-0 btn-sm btn-primary" @click="$emit('remove')">Remove</button>
       </li>
     `,
     props: ['title']

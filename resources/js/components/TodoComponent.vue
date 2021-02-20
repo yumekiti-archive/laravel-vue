@@ -9,7 +9,7 @@
             id="new-todo"
             placeholder="E.g. Feed the cat"
           />
-          <button>Add</button>
+          <button class="btn btn-primary">Add</button>
         </form>
         <ul>
           <todo-item-2

@@ -1970,7 +1970,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
 Vue.component('todo-item-2', {
-  template: "\n      <li>\n        {{ title }}\n        <button @click=\"$emit('remove')\">Remove</button>\n      </li>\n    ",
+  template: "\n      <li>\n        {{ title }}\n        <button class=\"mt-1 mb-0 btn-sm btn-primary\" @click=\"$emit('remove')\">Remove</button>\n      </li>\n    ",
   props: ['title']
 });
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_2__.default);
@@ -38100,7 +38100,7 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _c("button", [_vm._v("Add")])
+            _c("button", { staticClass: "btn btn-primary" }, [_vm._v("Add")])
           ]
         ),
         _vm._v(" "),
