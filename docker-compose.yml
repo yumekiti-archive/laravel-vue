@@ -1,0 +1,52 @@
+version: "3"
+
+services:
+
+  nginx:
+    image: nginx
+    container_name: vue-laravel-nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx-default.conf:/etc/nginx/conf.d/default.conf
+      - ./:/var/www
+
+  php:
+    container_name: vue-laravel-php
+    build:
+      context: .
+      dockerfile: php.dockerfile
+    volumes:
+      - ./:/var/www
+
+  
+  db: 
+    image: mysql:8.0
+    container_name: vue-laravel-db
+    environment:
+      - MYSQL_DATABASE=vue-laravel
+      - MYSQL_USER=vue-laravel-user
+      - MYSQL_PASSWORD=vue-laravel-password
+      - MYSQL_ROOT_PASSWORD=vue-laravel-root-password
+      - TZ='Asia/Tokyo'
+    volumes:
+      - ./my.cnf:/etc/mysql/conf.d/my.cnf
+    ports: 
+      - 3306:3306
+
+#  redis:
+#    container_name: diffweb_redis
+#    image: redis:6.0.9
+#    ports:
+#      - "6379:6379"
+  
+#  laravel-echo-server:
+#    container_name: diffweb_echo_server
+#    build:
+#      context: .
+#      dockerfile: laravel-echo-server.dockerfile
+#    ports:
+#      - 6001:6001
+#    volumes:
+#      - ./:/work:cached
+#    working_dir: /work
