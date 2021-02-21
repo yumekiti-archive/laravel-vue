@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Task;
 use Illuminate\Database\Seeder;
 
 class TodosTableSeeder extends Seeder
