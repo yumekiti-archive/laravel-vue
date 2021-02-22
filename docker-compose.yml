@@ -17,7 +17,7 @@ services:
       context: .
       dockerfile: php.dockerfile
     volumes:
-      - ./:/var/www
+      - ./:/work
       - ./php.ini /usr/local/etc/php/php.ini
 
   
